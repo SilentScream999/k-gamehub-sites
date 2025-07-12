@@ -6,11 +6,13 @@
   <script>
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
-      const lang = urlParams.get('lang') || 'en-US';
-      let targetUrl = 'user-agreement-en.html'; // default English
+      const lang = (urlParams.get('lang') || 'en').toLowerCase();
+      let targetUrl = 'user-agreement-en.html'; // default to English
 
-      if (lang.toLowerCase().startsWith('zh-CN')) {
+      if (lang.startsWith('zh')) {
         targetUrl = 'user-agreement-zh.html';
+      } else if (lang.startsWith('en')) {
+        targetUrl = 'user-agreement-en.html';
       }
 
       window.location.replace(targetUrl);
@@ -18,6 +20,6 @@
   </script>
 </head>
 <body>
-  <p>Redirecting to the user agreement...</p>
+  <p>Redirecting to the User Agreement...</p>
 </body>
 </html>

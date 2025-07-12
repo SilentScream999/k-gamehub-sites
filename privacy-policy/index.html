@@ -1,0 +1,25 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8" />
+  <title>Redirecting to Privacy Policy…</title>
+  <script>
+    (function () {
+      const params = new URLSearchParams(window.location.search);
+      const lang = (params.get('lang') || 'en').toLowerCase();
+
+      if (lang.startsWith('zh')) {
+        window.location.replace('privacy-policy-zh.html');
+      } else if (lang.startsWith('en')) {
+        window.location.replace('privacy-policy-en.html');
+      } else {
+        // fallback to English if unknown language
+        window.location.replace('privacy-policy-en.html');
+      }
+    })();
+  </script>
+</head>
+<body>
+  <p>Redirecting to the Privacy Policy…</p>
+</body>
+</html>
