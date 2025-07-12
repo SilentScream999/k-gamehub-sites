@@ -7,10 +7,10 @@
     (function() {
       const urlParams = new URLSearchParams(window.location.search);
       const lang = urlParams.get('lang') || 'en';
-      let targetUrl = 'user-agreement-en.html'; // default English
+      let targetUrl = '/user-agreement/user-agreement-en.html'; // default English
 
       if (lang.toLowerCase().startsWith('zh')) {
-        targetUrl = 'user-agreement-zh.html';
+        targetUrl = '/user-agreement/user-agreement-zh.html';
       }
 
       window.location.replace(targetUrl);
